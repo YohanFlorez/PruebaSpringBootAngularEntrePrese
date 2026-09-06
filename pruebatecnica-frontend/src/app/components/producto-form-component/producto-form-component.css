@@ -1,0 +1,112 @@
+:host {
+  display: block;
+}
+
+.container {
+  max-width: 480px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1E2422;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1.75rem;
+  padding-left: 0.9rem;
+  border-left: 3px solid #1F6F5C;
+  line-height: 1.3;
+}
+
+form {
+  background: #FAF9F6;
+  border: 1px solid #DCD8D0;
+  border-radius: 6px;
+  padding: 1.75rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #4A524E;
+}
+
+.campo input,
+.campo select {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  border: 1px solid #C9C4BA;
+  border-radius: 4px;
+  background: #FFFFFF;
+  color: #1E2422;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: #1F6F5C;
+  box-shadow: 0 0 0 3px rgba(31, 111, 92, 0.15);
+}
+
+.campo input.ng-invalid.ng-touched,
+.campo select.ng-invalid.ng-touched {
+  border-color: #B3402E;
+}
+
+.error {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: #B3402E;
+}
+
+button {
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+button[type="submit"] {
+  background: #1F6F5C;
+  color: #FFFFFF;
+  margin-right: 0.75rem;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background: #195A4A;
+}
+
+button[type="submit"]:disabled {
+  background: #A9BDB8;
+  cursor: not-allowed;
+}
+
+button[type="button"] {
+  background: transparent;
+  color: #4A524E;
+  border-color: #C9C4BA;
+}
+
+button[type="button"]:hover {
+  background: #F0EEE9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .campo input,
+  .campo select,
+  button {
+    transition: none;
+  }
+}

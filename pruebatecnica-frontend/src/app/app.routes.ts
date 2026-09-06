@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+
+
+import { Routes } from '@angular/router';
+import { ProductoListComponent } from './components/producto-list-component/producto-list-component';
+import { ProductoFormComponent } from './components/producto-form-component/producto-form-component';
+
+export const routes: Routes = [
+  { path: '', redirectTo: 'productos', pathMatch: 'full' },
+  { path: 'productos', component: ProductoListComponent },
+  { path: 'productos/nuevo', component: ProductoFormComponent },
+  { path: 'productos/editar/:id', component: ProductoFormComponent }
+];

@@ -1,0 +1,46 @@
+<div class="container">
+  <h2>{{ id ? 'Editar' : 'Crear' }} Producto</h2>
+
+  <form [formGroup]="form" (ngSubmit)="guardar()">
+
+    <div class="campo">
+      <label>Nombre</label>
+      <input type="text" formControlName="nombre">
+      <span class="error" *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched">
+        El nombre es obligatorio
+      </span>
+    </div>
+
+    <div class="campo">
+      <label>Precio</label>
+      <input type="number" formControlName="precio" step="0.01">
+      <span class="error" *ngIf="form.get('precio')?.invalid && form.get('precio')?.touched">
+        El precio debe ser mayor a 0
+      </span>
+    </div>
+
+    <div class="campo">
+      <label>Stock</label>
+      <input type="number" formControlName="stock">
+      <span class="error" *ngIf="form.get('stock')?.invalid && form.get('stock')?.touched">
+        El stock es obligatorio
+      </span>
+    </div>
+
+    <div class="campo">
+    <label>Categoría</label>
+    <select formControlName="categoria">
+      <option value="" disabled>Selecciona una categoría</option>
+      <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
+    </select>
+  </div>
+
+    <button type="submit" [disabled]="form.invalid">
+      {{ id ? 'Actualizar' : 'Crear' }}
+    </button>
+   <button type="button" (click)="cancelar()">
+  Cancelar
+</button>
+
+  </form>
+</div>

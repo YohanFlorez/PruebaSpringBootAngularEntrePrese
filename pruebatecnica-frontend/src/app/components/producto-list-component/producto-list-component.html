@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Productos</h2>
+
+  <div class="barra-filtros">
+    <select [(ngModel)]="categoriaFiltro" class="select-categoria">
+      <option value="">Todas las categorías</option>
+      <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
+    </select>
+    <button (click)="cargarProductos()">Buscar</button>
+    <button class="btn-nuevo" (click)="nuevoProducto()">+ Nuevo producto</button>
+  </div>
+
+  <p *ngIf="cargando">Cargando...</p>
+  <p *ngIf="error" class="error">{{ error }}</p>
+
+  <table *ngIf="!cargando && productos.length > 0">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Categoría</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td data-label="Nombre">{{ producto.nombre }}</td>
+        <td data-label="Precio">{{ producto.precio | currency }}</td>
+        <td data-label="Stock">{{ producto.stock }}</td>
+        <td data-label="Categoría">{{ producto.categoria }}</td>
+        <td data-label="Acciones" class="celda-acciones">
+          <button class="btn-editar" (click)="editarProducto(producto.id!)">Editar</button>
+          <button class="btn-eliminar" (click)="eliminar(producto.id!)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!cargando && productos.length === 0">No hay productos.</p>
+</div>
