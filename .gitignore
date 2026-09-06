@@ -1,0 +1,13 @@
+# Backend (Java / Maven)
+pruebatecnicaSpringBoot/target/
+pruebatecnicaSpringBoot/.idea/
+pruebatecnicaSpringBoot/*.iml
+
+# Frontend (Angular / Node)
+pruebatecnica-frontend/node_modules/
+pruebatecnica-frontend/dist/
+pruebatecnica-frontend/.angular/
+
+# General
+.DS_Store
+*.log
